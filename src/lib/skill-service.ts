@@ -142,7 +142,7 @@ author: "${localSkill.author.name} (@${localSkill.author.handle})"
 ${localSkill.overview}
 
 ## Key Capabilities
-${localSkill.features.map((f) => `- ${f}`).join("\n")}
+${(localSkill.features ?? []).map((f) => `- ${f}`).join("\n")}
 
 ## Installation
 \`\`\`bash
@@ -155,7 +155,7 @@ ${localSkill.codeSample}
 \`\`\`
 
 ## Declared Agent Permissions
-${localSkill.permissions.map((p) => `- \`${p}\``).join("\n")}
+${(localSkill.permissions ?? []).map((p) => `- \`${p}\``).join("\n")}
 `;
 }
 
