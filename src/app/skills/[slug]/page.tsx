@@ -27,6 +27,10 @@ export async function generateStaticParams() {
   }));
 }
 
+// Opt out of instant navigation validation — this route needs
+// params + remote data (GitHub / Supabase) before it can render.
+export const instant = false;
+
 export default async function SkillDetailPage({ params }: SkillPageProps) {
   const { slug } = await params;
   const localSkill = getSkillBySlug(slug);
@@ -121,7 +125,6 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
                 >
                   <Github size={13} />
                   <span>{skill.repo}</span>
-                  <span className="text-[10px] text-tertiary/60">@{skill.sourceRevision}</span>
                   <ExternalLink size={10} />
                 </a>
               </div>
@@ -230,13 +233,13 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
                   return isBlock ? (
                     <code className="font-mono text-[12px]">{children}</code>
                   ) : (
-                    <code className="rounded-[4px] border border-(--border-subtle) bg-subtle px-1.5 py-0.5 font-mono text-[11px] text-primary">
+                    <code className="rounded-[4px] border border-(--border-subtle) px-1.5 py-0.5 font-mono text-[11px] text-primary">
                       {children}
                     </code>
                   );
                 },
                 pre: ({ children }) => (
-                  <pre className="my-4 overflow-x-auto rounded-[8px] border border-(--border-subtle) bg-(--gray-900) p-3.5 font-mono text-[12px] leading-[18px] text-[#F1F3F5]">
+                  <pre className="my-4 overflow-x-auto rounded-[8px] border border-(--border-subtle) bg-neutral-50 p-3.5 font-mono text-[12px] leading-[18px] text-primary">
                     {children}
                   </pre>
                 ),
@@ -300,14 +303,6 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="py-2.5 flex items-center justify-between">
-              <span className="text-tertiary">Downloads</span>
-              <span className="inline-flex items-center gap-1 font-mono font-medium text-primary">
-                <Download size={12} className="text-tertiary" />
-                {skill.downloads}
-              </span>
             </div>
 
             <div className="py-2.5 flex items-center justify-between">
