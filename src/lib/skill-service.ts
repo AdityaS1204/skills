@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import matter from "gray-matter";
-import { getSkillBySlug, Skill } from "@/lib/skills-data";
+import { getSkillBySlug, type Skill } from "./skills-data";
 
 export interface CachedSkill {
   slug: string;

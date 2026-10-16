@@ -80,34 +80,66 @@ export const SKILLS: Skill[] = [
   permissions: ["repo:read", "pull-requests:write"],
 },
 {
+  slug: "frontend-design",
+  name: "Frontend Design",
+  category: "Productivity",
+  repo: "anthropics/skills",
+  repoUrl: "https://github.com/anthropics/skills",
+  skillPath: "skills/frontend-design/SKILL.md",
+  image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=120&auto=format&fit=crop&q=80",
+  description: "Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+  version: "v1.0.0",
+  tags: ["frontend", "design", "ui", "anthropic", "web"],
+  verified: true,
+  author: {
+    name: "anthropics",
+    handle: "anthropics",
+    avatar: "https://github.com/anthropics.png?size=160",
+  },
+  installCommand: "npx skills add https://github.com/anthropics/skills --skill frontend-design",
+  downloads: "14.2k",
+  stars: "9.8k",
+  license: "Complete terms in LICENSE.txt",
+  lastUpdated: "Today",
+  overview: "Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+  features: [
+    "Distinct visual identities avoiding cliché or templated looks",
+    "Anti-slop typography and layout heuristics",
+    "Motion discipline and intentional animations",
+    "Writing and copywriting intentionality in design",
+    "Production-grade frontend craft and CSS specificity discipline",
+  ],
+  permissions: ["repo:read"],
+},
+{
   slug: "Accessibility",                    
   name: "Web Accessibility",
   category: "Productivity",                      
   repo: "addyosmani/web-quality-skills",                  
   repoUrl: "https://github.com/addyosmani/web-quality-skills/tree/main/skills",
-  skillPath: "skills/skill-name/SKILL.md",  
-  image: "https://images.unsplash.com/photo-xxx",
-  description: "Short one-line description",
+  skillPath: "skills/accessibility/SKILL.md",  
+  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=120&auto=format&fit=crop&q=80",
+  description: "Audit and improve web accessibility following WCAG 2.2 guidelines.",
   version: "v1.0.0",
-  tags: ["web-accessibility", "web-dev"],
+  tags: ["web-accessibility", "web-dev", "a11y"],
   verified: true,
   author: {
     name: "addyosmani",
     handle: "addyosmani",
-    avatar: "https://images.unsplash.com/photo-xxx?w=96&auto=format&fit=crop&q=80"
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&auto=format&fit=crop&q=80",
   },
   installCommand: "npx skills@latest add addyosmani/web-quality-skills",
-  downloads: "0",
-  stars: "0",
+  downloads: "1.5k",
+  stars: "850",
   license: "MIT",
   lastUpdated: "Today",
-  overview: "Automated accessibility checking for web projects.",
-  features: ["Feature 1", "Feature 2", "Feature 3"],
+  overview: "Automated accessibility checking and WCAG 2.2 remediation for web projects.",
+  features: ["Automated WCAG 2.2 checks", "Screen reader auditing", "Keyboard navigation validation"],
   permissions: ["repo:read"],
 }
-
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
-  return SKILLS.find((s) => s.slug === slug);
+  return SKILLS.find((s) => s.slug.toLowerCase() === slug.toLowerCase());
 }
+
