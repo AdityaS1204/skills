@@ -277,68 +277,6 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
               <InstallCommand command={skill.installCommand} />
             </div>
           </div>
-
-          {/* Details Metadata List */}
-          <div className="divide-y rounded-[12px] border border-(--border-subtle) bg-surface p-4 text-[12px] shadow-xs">
-            <div className="pb-3">
-              <span className="text-[11px] font-medium text-tertiary">
-                Publisher
-              </span>
-              <div className="mt-1.5 flex items-center gap-2">
-                <div className="relative h-6 w-6 overflow-hidden rounded-full border border-(--border-subtle)">
-                  <Image
-                    src={skill.author.avatar}
-                    alt={skill.author.name}
-                    fill
-                    sizes="24px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <div className="font-medium text-primary">
-                    {skill.author.name}
-                  </div>
-                  <div className="font-mono text-[10px] text-tertiary">
-                    {skill.author.handle}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="py-2.5 flex items-center justify-between">
-              <span className="text-tertiary">GitHub Stars</span>
-              <span className="inline-flex items-center gap-1 font-mono font-medium text-primary">
-                <Star size={12} className="text-tertiary" />
-                {skill.stars}
-              </span>
-            </div>
-
-            <div className="py-2.5 flex items-center justify-between">
-              <span className="text-tertiary">License</span>
-              <span className="font-mono text-primary">{skill.license}</span>
-            </div>
-
-            <div className="py-2.5 flex items-center justify-between">
-              <span className="text-tertiary">Updated</span>
-              <span className="text-secondary">{skill.lastUpdated}</span>
-            </div>
-
-            <div className="pt-3">
-              <span className="text-[11px] font-medium text-tertiary">
-                Tags
-              </span>
-              <div className="mt-1.5 flex flex-wrap gap-1">
-                {skill.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex h-[18px] items-center rounded-[4px] border border-(--border-subtle) bg-subtle px-1.5 font-mono text-[10px] text-secondary"
-                  >
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
         </aside>
       </div>
     </div>

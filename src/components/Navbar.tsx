@@ -12,27 +12,8 @@ export function Navbar() {
             href="/"
             className="flex items-center gap-2 text-[14px] font-semibold tracking-tight text-primary transition-opacity hover:opacity-80"
           >
-            <span className="flex h-5 w-5 items-center justify-center rounded-[4px] bg-primary text-[11px] font-bold text-white">
-              S
-            </span>
-            <span>skills.registry</span>
+            <span>UI-Skills</span>
           </Link>
-          <nav className="hidden items-center gap-4 sm:flex">
-            <Link
-              href="/"
-              className="text-[13px] font-medium text-primary transition-colors hover:text-primary"
-            >
-              Explore
-            </Link>
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[13px] font-medium text-secondary transition-colors hover:text-primary"
-            >
-              Docs
-            </a>
-          </nav>
         </div>
 
         <div className="flex items-center gap-3">

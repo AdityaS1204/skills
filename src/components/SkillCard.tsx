@@ -72,7 +72,7 @@ export function SkillCard({ skill, variants }: SkillCardProps) {
               title={`Open github.com/${skill.repo}`}
             >
               <Github size={16} className="shrink-0 text-tertiary" />
-              <span>{skill.repo}</span>
+              <span>{skill.author.name}</span>
             </a>
           </div>
 
