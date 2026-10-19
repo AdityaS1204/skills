@@ -9,7 +9,7 @@ export interface Skill {
   version: string;
   downloads: string;
   stars: number | string;
-  category: "Browser" | "Runtime" | "Database" | "Productivity" | "DevOps";
+  category: "Browser" | "Database" | "Productivity" | "Content" | "UI/UX" | "Design";
   tags: string[];
   verified?: boolean;
   author: {
@@ -28,35 +28,9 @@ export interface Skill {
 
 export const SKILLS: Skill[] = [
 {
-  slug: "github-pr-reviewer",
-  name: "GitHub PR Reviewer",
-  category: "DevOps",
-  repo: "octocat/pr-reviewer-skill",
-  repoUrl: "https://github.com/octocat/pr-reviewer-skill",
-  image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=120&auto=format&fit=crop&q=80",
-  description: "Autonomous code review agent that scans diffs, flags security risks, and comments inline.",
-  version: "v1.0.0",
-  tags: ["github", "code-review", "devops"],
-  verified: true,
-  author: {
-    name: "Octocat",
-    handle: "octocat",
-    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&auto=format&fit=crop&q=80"
-  },
-  installCommand: "npx agent-skills add github-pr-reviewer",
-  downloads: "4.8k",
-  stars: "1.2k",
-  license: "MIT",
-  lastUpdated: "Today",
-  overview: "Automated PR review agent integrating with GitHub Actions and branch protection rules.",
-  features: ["Static analysis", "Inline line comments", "Automated approval delegation"],
-  permissions: ["repo:read", "pull-requests:write"],
-  codeSample: `import { Reviewer } from "octocat/pr-reviewer-skill";\nconst agent = new Reviewer();\nawait agent.reviewPR({ prNumber: 42 });`
-},
-{
-  slug: "code-sandbox-sdk",
+  slug: "anti-ai-sop-writing",
   name: "Anti AI Sop Writing",
-  category: "DevOps",
+  category: "Content",
   repo: "jalaalrd/anti-ai-slop-writing",
   repoUrl: "https://github.com/jalaalrd/anti-ai-slop-writing",
   skillPath: "skills/anti-ai-slop-writing/SKILL.md",
@@ -82,7 +56,7 @@ export const SKILLS: Skill[] = [
 {
   slug: "frontend-design",
   name: "Frontend Design",
-  category: "Productivity",
+  category: "Design",
   repo: "anthropics/skills",
   repoUrl: "https://github.com/anthropics/skills",
   skillPath: "skills/frontend-design/SKILL.md",
@@ -114,7 +88,7 @@ export const SKILLS: Skill[] = [
 {
   slug: "Accessibility",                    
   name: "Web Accessibility",
-  category: "Productivity",                      
+  category: "UI/UX",                      
   repo: "addyosmani/web-quality-skills",                  
   repoUrl: "https://github.com/addyosmani/web-quality-skills/tree/main/skills",
   skillPath: "skills/accessibility/SKILL.md",  
@@ -135,6 +109,37 @@ export const SKILLS: Skill[] = [
   lastUpdated: "Today",
   overview: "Automated accessibility checking and WCAG 2.2 remediation for web projects.",
   features: ["Automated WCAG 2.2 checks", "Screen reader auditing", "Keyboard navigation validation"],
+  permissions: ["repo:read"],
+},
+{
+  slug: "improve-animations",
+  name: "Improve Animations",
+  category: "UI/UX",
+  repo: "emilkowalski/skills",
+  repoUrl: "https://github.com/emilkowalski/skills",
+  skillPath: "skills/improve-animations/SKILL.md",
+  image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=120&auto=format&fit=crop&q=80",
+  description: "Survey a codebase's animation and motion code as a senior motion advisor, then produce prioritized audit and self-contained implementation plans.",
+  version: "v1.0.0",
+  tags: ["animation", "motion", "ui-ux", "framer-motion", "transitions"],
+  verified: true,
+  author: {
+    name: "Emil Kowalski",
+    handle: "emilkowalski",
+    avatar: "https://github.com/emilkowalski.png?size=160",
+  },
+  installCommand: "npx skills add https://github.com/emilkowalski/skills --skill improve-animations",
+  downloads: "18.5k",
+  stars: "12.1k",
+  license: "MIT",
+  lastUpdated: "Today",
+  overview: "Survey a codebase's animation and motion code as a senior motion advisor, then produce prioritized audit and self-contained implementation plans. Read-only on source code — plans improvements without mutating code directly.",
+  features: [
+    "Recon scan of existing animation libraries and conventions",
+    "Eight-category motion audit (purpose, easing, physicality, performance)",
+    "Self-contained execution plans for agents and developers",
+    "Verification feel-checks for transitions and gestures",
+  ],
   permissions: ["repo:read"],
 }
 ];
