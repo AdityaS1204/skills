@@ -1,3 +1,11 @@
+export interface SkillFile {
+  name: string;
+  path: string;
+  type?: "file" | "dir";
+  htmlUrl: string;
+  size?: number;
+}
+
 export interface Skill {
   slug: string;
   name: string;
@@ -24,12 +32,13 @@ export interface Skill {
   features?: string[];
   permissions?: string[];
   codeSample?: string;
+  otherFiles?: SkillFile[];
 }
 
 export const SKILLS: Skill[] = [
 {
-  slug: "anti-ai-sop-writing",
-  name: "Anti AI Sop Writing",
+  slug: "anti-ai-slop-writing",
+  name: "Anti AI Slop Writing",
   category: "Content",
   repo: "jalaalrd/anti-ai-slop-writing",
   repoUrl: "https://github.com/jalaalrd/anti-ai-slop-writing",
@@ -84,6 +93,13 @@ export const SKILLS: Skill[] = [
     "Production-grade frontend craft and CSS specificity discipline",
   ],
   permissions: ["repo:read"],
+  otherFiles: [
+    {
+      name: "LICENSE.txt",
+      path: "skills/frontend-design/LICENSE.txt",
+      htmlUrl: "https://github.com/anthropics/skills/blob/main/skills/frontend-design/LICENSE.txt",
+    },
+  ],
 },
 {
   slug: "Accessibility",                    
@@ -141,6 +157,50 @@ export const SKILLS: Skill[] = [
     "Verification feel-checks for transitions and gestures",
   ],
   permissions: ["repo:read"],
+  otherFiles: [
+    {
+      name: "AUDIT.md",
+      path: "skills/improve-animations/AUDIT.md",
+      htmlUrl: "https://github.com/emilkowalski/skills/blob/main/skills/improve-animations/AUDIT.md",
+    },
+    {
+      name: "PLAN-TEMPLATE.md",
+      path: "skills/improve-animations/PLAN-TEMPLATE.md",
+      htmlUrl: "https://github.com/emilkowalski/skills/blob/main/skills/improve-animations/PLAN-TEMPLATE.md",
+    },
+  ],
+},
+{
+  slug: "animation-performance",
+  name: "Animation Performance",
+  category: "UI/UX",
+  repo: "emilkowalski/skills",
+  repoUrl: "https://github.com/emilkowalski/skills",
+  skillPath: "skills/animation-performance/SKILL.md",
+  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=120&auto=format&fit=crop&q=80",
+  description: "Keep web animations inside the frame budget — animate composite-only properties, keep motion off the main thread, and diagnose dropped frames.",
+  version: "v1.0.0",
+  tags: ["animation", "performance", "motion", "ui-ux", "frame-rate", "waapi"],
+  verified: true,
+  author: {
+    name: "Emil Kowalski",
+    handle: "emilkowalski",
+    avatar: "https://github.com/emilkowalski.png?size=160",
+  },
+  installCommand: "npx skills add https://github.com/emilkowalski/skills --skill animation-performance",
+  downloads: "14.2k",
+  stars: "12.1k",
+  license: "MIT",
+  lastUpdated: "Today",
+  overview: "Keep web animations inside the frame budget — animate composite-only properties, keep motion off the main thread when the page is busy, and find the cause when an animation drops frames.",
+  features: [
+    "Layout/paint/composite pipeline optimizations and property swaps",
+    "CSS vs WAAPI vs requestAnimationFrame execution thread analysis",
+    "Framer Motion hardware-accelerated path diagnostics",
+    "React render cycle animation budget auditing and CSS variable inheritance checks",
+  ],
+  permissions: ["repo:read"],
+  otherFiles: [],
 }
 ];
 
