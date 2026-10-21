@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -18,6 +19,42 @@ interface SkillPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: SkillPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const localSkill = getSkillBySlug(slug);
+  const cachedSkill = await getSkillWithMarkdown(slug);
+
+  const title = cachedSkill?.name || localSkill?.name || slug;
+  const description =
+    cachedSkill?.description ||
+    localSkill?.description ||
+    "A skill specification for AI coding agents.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${title} - AI Agent Skill`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og-image.png"],
+    },
+  };
 }
 
 export async function generateStaticParams() {
