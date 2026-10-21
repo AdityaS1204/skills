@@ -17,7 +17,7 @@ export interface Skill {
   version: string;
   downloads: string;
   stars: number | string;
-  category: "Browser" | "Database" | "Productivity" | "Content" | "UI/UX" | "Design";
+  category: "Browser" | "Productivity" | "Content" | "UI/UX" | "Design";
   tags: string[];
   verified?: boolean;
   author: {
@@ -573,6 +573,38 @@ export const SKILLS: Skill[] = [
     "Optimized specifically for high click-through to '…see more'",
   ],
   permissions: ["repo:read"],
+  otherFiles: [],
+},
+{
+  slug: "agent-browser",
+  name: "Agent Browser",
+  category: "Browser",
+  repo: "vercel-labs/agent-browser",
+  repoUrl: "https://github.com/vercel-labs/agent-browser",
+  skillPath: "skills/agent-browser/SKILL.md",
+  image: "https://github.com/vercel-labs.png?size=160",
+  description: "Fast browser automation CLI for AI agents via CDP with accessibility-tree snapshots and compact element refs.",
+  version: "v1.0.0",
+  tags: ["browser", "automation", "cdp", "agent-browser", "qa", "testing", "web"],
+  verified: true,
+  author: {
+    name: "Vercel Labs",
+    handle: "vercel-labs",
+    avatar: "https://github.com/vercel-labs.png?size=160",
+  },
+  installCommand: "npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser",
+  downloads: "89.2k",
+  stars: "44.3k",
+  license: "Apache-2.0",
+  lastUpdated: "Today",
+  overview: "Fast browser automation CLI for AI agents. Controls Chrome/Chromium via CDP with accessibility-tree snapshots and compact @eN element refs for navigating, filling forms, and QA testing.",
+  features: [
+    "Chrome/Chromium automation via Chrome DevTools Protocol (CDP)",
+    "Accessibility-tree snapshots with compact @eN element references",
+    "Form filling, button clicking, screenshot capturing, and web app testing",
+    "Electron desktop apps and microVM sandbox automation support",
+  ],
+  permissions: ["browser:control", "shell:execute"],
   otherFiles: [],
 }
 ];

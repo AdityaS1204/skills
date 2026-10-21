@@ -6,7 +6,7 @@ import { SkillCard } from "@/components/SkillCard";
 import { Search } from "@honeyicons/react";
 import { motion, type Variants } from "motion/react";
 
-const CATEGORIES = ["All", "UI/UX", "Design", "Browser", "Database", "Productivity", "Content"] as const;
+const CATEGORIES = ["All", "UI/UX", "Design", "Browser", "Productivity", "Content"] as const;
 
 const heroContainerVariants: Variants = {
   hidden: { opacity: 0 },
