@@ -336,6 +336,38 @@ export const SKILLS: Skill[] = [
       htmlUrl: "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices/rules",
     },
   ],
+},
+{
+  slug: "apple-design",
+  name: "Apple Design",
+  category: "Design",
+  repo: "emilkowalski/skills",
+  repoUrl: "https://github.com/emilkowalski/skills",
+  skillPath: "skills/apple-design/SKILL.md",
+  image: "https://github.com/emilkowalski.png?size=160",
+  description: "Apple's approach to interface design and fluid, physical motion, translated for the web. Covers gesture-driven UI, spring animations, momentum, and depth.",
+  version: "v1.0.0",
+  tags: ["apple", "design", "motion", "springs", "gestures", "ui-ux", "fluid-interfaces"],
+  verified: true,
+  author: {
+    name: "Emil Kowalski",
+    handle: "emilkowalski",
+    avatar: "https://github.com/emilkowalski.png?size=160",
+  },
+  installCommand: "npx skills add https://github.com/emilkowalski/skills --skill apple-design",
+  downloads: "22.4k",
+  stars: "12.1k",
+  license: "MIT",
+  lastUpdated: "Today",
+  overview: "Apple's approach to interface design and fluid, physical motion, translated for the web. Covers gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials, and depth.",
+  features: [
+    "Fluid interface principles distilled from Apple WWDC design talks",
+    "Velocity-aware interruptible spring physics and momentum projection",
+    "Pointer-down instant response and continuous gesture tracking",
+    "Translucent materials, blur layers, and spatial consistency",
+  ],
+  permissions: ["repo:read"],
+  otherFiles: [],
 }
 ];
 
