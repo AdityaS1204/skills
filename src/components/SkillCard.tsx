@@ -36,12 +36,12 @@ export function SkillCard({ skill, variants }: SkillCardProps) {
     >
       {/* Left section: Icon, Name, Verified, Repo, Description */}
       <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
-        <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-[8px] border border-(--border-subtle) bg-subtle">
+        <div className="relative h-[46px] w-[46px] shrink-0 overflow-hidden rounded-[8px] border border-(--border-subtle) bg-subtle">
           <Image
             src={skill.image}
             alt={skill.name}
             fill
-            sizes="44px"
+            sizes="46px"
             className="object-cover transition-transform duration-200 group-hover:scale-105"
           />
         </div>

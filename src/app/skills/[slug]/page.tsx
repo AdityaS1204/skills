@@ -51,7 +51,7 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
     frontmatter: cachedSkill?.frontmatter || {},
     content: cachedSkill?.content || "",
     verified: localSkill?.verified ?? true,
-    image: localSkill?.image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80",
+    image: localSkill?.image || (cachedSkill?.repo ? `https://github.com/${cachedSkill.repo.split("/")[0]}.png?size=160` : "https://github.com/github.png?size=160"),
     installCommand: localSkill?.installCommand || `npx agent-skills add ${slug}`,
     downloads: localSkill?.downloads || "1.2k",
     stars: localSkill?.stars || "420",
@@ -61,9 +61,9 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
     folderUrl: cachedSkill?.folderUrl || (localSkill?.skillPath && localSkill.skillPath.includes("/") ? `https://github.com/${cachedSkill?.repo || localSkill?.repo}/tree/${cachedSkill?.sourceRevision || "main"}/${localSkill.skillPath.slice(0, localSkill.skillPath.lastIndexOf("/"))}` : `https://github.com/${cachedSkill?.repo || localSkill?.repo}`),
     otherFiles: cachedSkill?.otherFiles || localSkill?.otherFiles || [],
     author: localSkill?.author || {
-      name: (cachedSkill?.frontmatter?.author as string) || "Community",
-      handle: "community",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&auto=format&fit=crop&q=80",
+      name: (cachedSkill?.frontmatter?.author as string) || (cachedSkill?.repo ? cachedSkill.repo.split("/")[0] : "Community"),
+      handle: (cachedSkill?.repo ? cachedSkill.repo.split("/")[0] : "community"),
+      avatar: cachedSkill?.repo ? `https://github.com/${cachedSkill.repo.split("/")[0]}.png?size=160` : "https://github.com/github.png?size=160",
     },
   };
 
@@ -90,12 +90,12 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
         <div className="w-full flex-1 max-w-[680px]">
           {/* Header */}
           <div className="flex items-start gap-4">
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[10px] border border-(--border-subtle) bg-subtle shadow-xs">
+            <div className="relative h-[58px] w-[58px] shrink-0 overflow-hidden rounded-[10px] border border-(--border-subtle) bg-subtle shadow-xs">
               <Image
                 src={skill.image}
                 alt={skill.name}
                 fill
-                sizes="56px"
+                sizes="58px"
                 className="object-cover"
               />
             </div>
