@@ -8,11 +8,10 @@ import { getSkillWithMarkdown } from "@/lib/skill-service";
 import { InstallCommand } from "@/components/InstallCommand";
 import {
   Github,
-  Star,
-  Download,
   VerifiedCheck,
   ArrowLeft,
   ExternalLink,
+  FileText,
 } from "@honeyicons/react";
 
 interface SkillPageProps {
@@ -58,7 +57,9 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
     stars: localSkill?.stars || "420",
     license: (cachedSkill?.frontmatter?.license as string) || localSkill?.license || "MIT",
     lastUpdated: localSkill?.lastUpdated || "Recently",
-    tags: localSkill?.tags || ["agent", "skill"],
+    folderPath: cachedSkill?.folderPath || (localSkill?.skillPath && localSkill.skillPath.includes("/") ? localSkill.skillPath.slice(0, localSkill.skillPath.lastIndexOf("/")) : ""),
+    folderUrl: cachedSkill?.folderUrl || (localSkill?.skillPath && localSkill.skillPath.includes("/") ? `https://github.com/${cachedSkill?.repo || localSkill?.repo}/tree/${cachedSkill?.sourceRevision || "main"}/${localSkill.skillPath.slice(0, localSkill.skillPath.lastIndexOf("/"))}` : `https://github.com/${cachedSkill?.repo || localSkill?.repo}`),
+    otherFiles: cachedSkill?.otherFiles || localSkill?.otherFiles || [],
     author: localSkill?.author || {
       name: (cachedSkill?.frontmatter?.author as string) || "Community",
       handle: "community",
@@ -264,6 +265,55 @@ export default async function SkillDetailPage({ params }: SkillPageProps) {
               {skill.content}
             </ReactMarkdown>
           </article>
+
+          {/* Other files in the skill folder */}
+          {skill.otherFiles && skill.otherFiles.length > 0 && (
+            <section aria-label="Other files" className="mt-10 border-t border-(--border-subtle) pt-8">
+              <div className="mb-3.5 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <h2 className="text-[14px] font-semibold tracking-tight text-primary">Other files</h2>
+                </div>
+              </div>
+              <div className="divide-y divide-(--border-subtle) overflow-hidden rounded-[8px] border border-(--border-subtle) bg-surface shadow-2xs">
+                {skill.otherFiles.map((file) => (
+                  <div
+                    key={file.path || file.name}
+                    className="group flex items-center justify-between px-3.5 py-3 transition-colors hover:bg-hover/60"
+                  >
+                    <a
+                      href={file.htmlUrl || skill.folderUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex min-w-0 items-center gap-2.5 font-mono text-[12px] font-medium text-primary transition-colors hover:text-accent truncate"
+                      title={`View ${file.name} on GitHub`}
+                    >
+                      <FileText size={14} className="shrink-0 text-tertiary transition-colors group-hover:text-primary" />
+                      <span className="truncate">{file.name}</span>
+                      {file.size ? (
+                        <span className="font-mono text-[10px] text-tertiary">
+                          ({file.size < 1024 ? `${file.size} B` : `${(file.size / 1024).toFixed(1)} KB`})
+                        </span>
+                      ) : null}
+                    </a>
+                    {skill.folderUrl && (
+                      <a
+                        href={skill.folderUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Open skill folder on GitHub"
+                        className="inline-flex shrink-0 items-center gap-1.5 pl-2 font-mono text-[11px] text-tertiary transition-colors hover:text-primary"
+                      >
+                        <span className="hidden text-[11px] text-tertiary group-hover:text-secondary sm:inline">
+                          View in folder
+                        </span>
+                        <ExternalLink size={13} className="text-tertiary transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
 
         {/* Right Rail: Metadata & Install Command (260px) */}
