@@ -725,6 +725,46 @@ export const SKILLS: Skill[] = [
       "repo:write"
     ]
   },
+   {
+    "slug": "playwright-cli",
+    "name": "Playwright CLI",
+    "category": "Browser",
+    "repo": "microsoft/playwright-cli",
+    "repoUrl": "https://github.com/microsoft/playwright-cli",
+    "skillPath": "skills/playwright-cli/SKILL.md",
+    "image": "https://github.com/microsoft.png?size=160",
+    "description": "Official Microsoft Playwright CLI skill for AI agents to automate browser navigation, inspect element trees, and record actions.",
+    "version": "v1.0.0",
+    "downloads": "22.6k",
+    "stars": "11.2k",
+    "tags": [
+      "playwright",
+      "browser-testing",
+      "automation",
+      "e2e",
+      "microsoft"
+    ],
+    "verified": true,
+    "author": {
+      "name": "Microsoft",
+      "handle": "microsoft",
+      "avatar": "https://github.com/microsoft.png?size=160"
+    },
+    "installCommand": "npx skills@latest add microsoft/playwright-cli --skill playwright-cli",
+    "license": "Apache-2.0",
+    "lastUpdated": "Today",
+    "overview": "Gives coding agents a direct browser driver to inspect rendered web pages, check interaction states, and test UI responsiveness.",
+    "features": [
+      "Live browser automation",
+      "Accessibility tree inspection",
+      "Element interaction recording",
+      "Visual error captures"
+    ],
+    "permissions": [
+      "repo:read",
+      "shell:execute"
+    ]
+  },
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
