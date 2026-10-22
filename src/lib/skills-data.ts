@@ -606,7 +606,46 @@ export const SKILLS: Skill[] = [
   ],
   permissions: ["browser:control", "shell:execute"],
   otherFiles: [],
-}
+},
+ {
+    "slug": "ui-ux-pro-max",
+    "name": "UI/UX Pro Max",
+    "category": "UI/UX",
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "repoUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+    "image": "https://github.com/nextlevelbuilder.png?size=160",
+    "description": "Comprehensive UI/UX design intelligence system evaluating layout balance, visual hierarchy, touch targets, and responsive interactions.",
+    "version": "v1.0.0",
+    "downloads": "8.7k",
+    "stars": "2.4k",
+    "tags": [
+      "ui-ux",
+      "design-review",
+      "heuristics",
+      "mobile-web",
+      "layout"
+    ],
+    "verified": true,
+    "author": {
+      "name": "nextlevelbuilder",
+      "handle": "nextlevelbuilder",
+      "avatar": "https://github.com/nextlevelbuilder.png?size=160"
+    },
+    "installCommand": "npx skills@latest add nextlevelbuilder/ui-ux-pro-max-skill",
+    "license": "MIT",
+    "lastUpdated": "Today",
+    "overview": "Injects design audit capabilities into AI coding sessions to prevent cluttered interfaces, poor contrast, and awkward spacing.",
+    "features": [
+      "Spacing rhythm checks",
+      "Visual hierarchy validation",
+      "Responsive breakpoint stress-tests",
+      "Component state audits"
+    ],
+    "permissions": [
+      "repo:read"
+    ]
+  },
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
