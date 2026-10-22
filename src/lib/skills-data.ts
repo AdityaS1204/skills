@@ -685,6 +685,46 @@ export const SKILLS: Skill[] = [
       "repo:read"
     ]
   },
+   {
+    "slug": "tailwind-design-system",
+    "name": "Tailwind Design System",
+    "category": "Design",
+    "repo": "wshobson/agents",
+    "repoUrl": "https://github.com/wshobson/agents",
+    "skillPath": "plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md",
+    "image": "https://github.com/wshobson.png?size=160",
+    "description": "Builds scalable design systems using Tailwind CSS v4, @theme inline blocks, CSS variables, and design tokens.",
+    "version": "v1.0.0",
+    "downloads": "7.3k",
+    "stars": "1.9k",
+    "tags": [
+      "tailwind-v4",
+      "design-tokens",
+      "theming",
+      "css-variables",
+      "design-system"
+    ],
+    "verified": true,
+    "author": {
+      "name": "wshobson",
+      "handle": "wshobson",
+      "avatar": "https://github.com/wshobson.png?size=160"
+    },
+    "installCommand": "npx skills@latest add wshobson/agents --skill tailwind-design-system",
+    "license": "MIT",
+    "lastUpdated": "Today",
+    "overview": "Provides an architectural blueprint for structuring modern Tailwind v4 themes, semantic color ramps, and reusable component tokens.",
+    "features": [
+      "Tailwind v4 @theme configuration",
+      "CSS variable color ramps",
+      "Semantic token aliasing",
+      "Dark mode surface rules"
+    ],
+    "permissions": [
+      "repo:read",
+      "repo:write"
+    ]
+  },
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
