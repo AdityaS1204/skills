@@ -765,6 +765,45 @@ export const SKILLS: Skill[] = [
       "shell:execute"
     ]
   },
+  {
+    "slug": "design-control-loop",
+    "name": "Design Control Loop",
+    "category": "Productivity",
+    "repo": "humanlayer/skills",
+    "repoUrl": "https://github.com/humanlayer/skills",
+    "skillPath": "plugins/design-control-loop/skills/design-control-loop/SKILL.md",
+    "image": "https://github.com/humanlayer.png?size=160",
+    "description": "Structured design interview loop that clarifies user intent, UX edge cases, and technical constraints before coding begins.",
+    "version": "v1.0.0",
+    "downloads": "8.8k",
+    "stars": "3.1k",
+    "tags": [
+      "design-spec",
+      "ux-interview",
+      "edge-cases",
+      "planning",
+      "workflow"
+    ],
+    "verified": true,
+    "author": {
+      "name": "HumanLayer",
+      "handle": "humanlayer",
+      "avatar": "https://github.com/humanlayer.png?size=160"
+    },
+    "installCommand": "npx skills@latest add humanlayer/skills --skill design-control-loop",
+    "license": "MIT",
+    "lastUpdated": "Today",
+    "overview": "Prevents wasted engineering iterations by systematically interviewing the engineer on empty states, error boundaries, and edge cases.",
+    "features": [
+      "UX edge case discovery",
+      "Component state enumeration",
+      "Constraint validation",
+      "Implementation roadmap generation"
+    ],
+    "permissions": [
+      "repo:read"
+    ]
+  },
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
