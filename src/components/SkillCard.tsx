@@ -32,8 +32,16 @@ export function SkillCard({ skill, variants }: SkillCardProps) {
   return (
     <motion.div
       variants={variants ?? skillCardVariants}
-      className="group relative flex flex-col gap-3 p-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-4 sm:py-3.5 transition-colors hover:bg-hover/50"
+      className="group relative flex cursor-pointer flex-col gap-3 p-3.5 transition-colors hover:bg-hover/50 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-4 sm:py-3.5"
     >
+      {/* Full card clickable link */}
+      <Link
+        href={`/skills/${skill.slug}`}
+        className="absolute inset-0 z-0"
+        aria-label={`View ${skill.name}`}
+        tabIndex={-1}
+      />
+
       {/* Left section: Icon, Name, Verified, Repo, Description */}
       <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
         <div className="relative h-[46px] w-[46px] shrink-0 overflow-hidden rounded-[8px] border border-(--border-subtle) bg-subtle">
@@ -50,25 +58,25 @@ export function SkillCard({ skill, variants }: SkillCardProps) {
           <div className="flex flex-wrap items-center gap-x-2.5 gap-y-0.5">
             <Link
               href={`/skills/${skill.slug}`}
-              className="text-[15px] font-semibold text-primary hover:text-accent transition-colors"
+              className="relative z-10 text-[15px] font-semibold text-primary transition-colors group-hover:text-accent"
             >
               {skill.name}
             </Link>
 
             {skill.verified && (
-              <span title="Verified Skill" className="inline-flex items-center text-accent">
+              <span title="Verified Skill" className="relative z-10 inline-flex items-center text-accent">
                 <VerifiedCheck size={14} />
               </span>
             )}
 
-            <span className="text-tertiary/50 text-[11px]">·</span>
+            <span className="relative z-10 text-tertiary/50 text-[11px]">·</span>
 
             <a
               href={skill.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 font-inter tracking-wider text-md text-tertiary transition-colors hover:text-primary hover:underline"
+              className="relative z-10 inline-flex items-center gap-1.5 font-inter tracking-wider text-md text-tertiary transition-colors hover:text-primary hover:underline"
               title={`Open github.com/${skill.repo}`}
             >
               <Github size={16} className="shrink-0 text-tertiary" />
@@ -82,8 +90,8 @@ export function SkillCard({ skill, variants }: SkillCardProps) {
         </div>
       </div>
 
-      {/* Right section: Category pill (Tags and version removed from UI) */}
-      <div className="flex items-center self-start sm:self-center shrink-0">
+      {/* Right section: Category pill (hidden on mobile, visible on sm and up) */}
+      <div className="hidden sm:flex items-center shrink-0 pointer-events-none">
         <span className="inline-flex h-[22px] items-center rounded-[5px] border border-(--border-subtle) bg-subtle px-2 font-mono text-[11px] font-medium text-secondary">
           {skill.category}
         </span>
