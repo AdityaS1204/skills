@@ -646,6 +646,45 @@ export const SKILLS: Skill[] = [
       "repo:read"
     ]
   },
+  {
+    "slug": "ux-ui-principles",
+    "name": "UX/UI Principles",
+    "category": "UI/UX",
+    "repo": "uxuiprinciples/agent-skills",
+    "repoUrl": "https://github.com/uxuiprinciples/agent-skills",
+    "skillPath": "SKILL.md",
+    "image": "https://github.com/uxuiprinciples.png?size=160",
+    "description": "Enforces foundational human-computer interaction (HCI) laws, including Fitts's Law, Hick's Law, cognitive load, and feedback loops.",
+    "version": "v1.0.0",
+    "downloads": "6.1k",
+    "stars": "1.8k",
+    "tags": [
+      "hci",
+      "ux-principles",
+      "usability",
+      "fitts-law",
+      "interaction"
+    ],
+    "verified": true,
+    "author": {
+      "name": "uxuiprinciples",
+      "handle": "uxuiprinciples",
+      "avatar": "https://github.com/uxuiprinciples.png?size=160"
+    },
+    "installCommand": "npx skills@latest add uxuiprinciples/agent-skills",
+    "license": "MIT",
+    "lastUpdated": "Today",
+    "overview": "Audits UX patterns against empirical usability laws to eliminate cognitive friction and enhance intuitive user flows.",
+    "features": [
+      "Fitts's Law touch target audits",
+      "Hick's Law decision reduction",
+      "Feedback timing verification",
+      "Error prevention heuristics"
+    ],
+    "permissions": [
+      "repo:read"
+    ]
+  },
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
