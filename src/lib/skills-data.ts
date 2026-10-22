@@ -804,6 +804,45 @@ export const SKILLS: Skill[] = [
       "repo:read"
     ]
   },
+   {
+    "slug": "code-review-and-quality",
+    "name": "Code Review & Quality",
+    "category": "Productivity",
+    "repo": "addyosmani/agent-skills",
+    "repoUrl": "https://github.com/addyosmani/agent-skills",
+    "skillPath": "skills/code-review-and-quality/SKILL.md",
+    "image": "https://github.com/addyosmani.png?size=160",
+    "description": "Five-axis senior engineer code quality review from Addy Osmani evaluating maintainability, performance, and accessibility.",
+    "version": "v1.0.0",
+    "downloads": "24.1k",
+    "stars": "9.9k",
+    "tags": [
+      "code-review",
+      "engineering-quality",
+      "performance",
+      "accessibility",
+      "maintainability"
+    ],
+    "verified": true,
+    "author": {
+      "name": "Addy Osmani",
+      "handle": "addyosmani",
+      "avatar": "https://github.com/addyosmani.png?size=160"
+    },
+    "installCommand": "npx skills@latest add addyosmani/agent-skills --skill code-review-and-quality",
+    "license": "MIT",
+    "lastUpdated": "Today",
+    "overview": "Ensures that newly crafted UI code adheres to production-grade engineering standards with zero technical debt.",
+    "features": [
+      "Five-axis quality scorecard",
+      "Web performance regression detection",
+      "Edge-case stress testing",
+      "Clean code recommendations"
+    ],
+    "permissions": [
+      "repo:read"
+    ]
+  },
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
