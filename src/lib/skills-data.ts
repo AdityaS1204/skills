@@ -843,6 +843,45 @@ export const SKILLS: Skill[] = [
       "repo:read"
     ]
   },
+   {
+    "slug": "ux-writing-skill",
+    "name": "UX Writing & Microcopy",
+    "category": "Content",
+    "repo": "content-designer/ux-writing-skill",
+    "repoUrl": "https://github.com/content-designer/ux-writing-skill",
+    "skillPath": "SKILL.md",
+    "image": "https://github.com/content-designer.png?size=160",
+    "description": "Transforms AI assistants into UX copywriters that produce action-oriented microcopy, clear error states, and consistent tone.",
+    "version": "v1.0.0",
+    "downloads": "5.5k",
+    "stars": "1.7k",
+    "tags": [
+      "ux-writing",
+      "microcopy",
+      "content-design",
+      "error-messages",
+      "copywriting"
+    ],
+    "verified": true,
+    "author": {
+      "name": "content-designer",
+      "handle": "content-designer",
+      "avatar": "https://github.com/content-designer.png?size=160"
+    },
+    "installCommand": "npx skills@latest add content-designer/ux-writing-skill",
+    "license": "MIT",
+    "lastUpdated": "Today",
+    "overview": "Eliminates placeholder copy and replaces awkward developer strings with concise, empathetic, and conversion-focused microcopy.",
+    "features": [
+      "Action-oriented CTA wording",
+      "Helpful error message rewriting",
+      "Empty state copy generation",
+      "Brand voice alignment"
+    ],
+    "permissions": [
+      "repo:read"
+    ]
+  },
 ];
 
 export function getSkillBySlug(slug: string): Skill | undefined {
